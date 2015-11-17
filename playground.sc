@@ -2,12 +2,18 @@ import play.api.libs.json._
 
 import play.api.libs.functional.syntax._
 
-case class Visitor(continent: String, country: String)
+import java.util.Date
+
+case class Visitor(continent: String, date: String, country: String,city : String, pid: String)
+
 
 
 implicit val documentReader: Reads[Visitor] = (
   (__ \ "continent").read[String] and
-    (__ \ "country").read[String]
+    (__ \ "country").read[String] and
+    (__ \ "date").read[String] and
+    (__ \ "city").read[String] and
+    (__ \ "pid").read[String]
   ) (Visitor.apply _)
 
 
