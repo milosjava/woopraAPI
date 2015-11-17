@@ -5,7 +5,6 @@ import scala.io.Source
 import play.api.libs.json._
 import play.api.libs.functional.syntax._
 
-import play.api.libs.json.Json
 
 import com.typesafe.scalalogging._
 
@@ -15,11 +14,15 @@ import com.typesafe.scalalogging._
 object Visitors extends LazyLogging{
 
 
-  case class Document(id: Int, name: String, fileType: String)
+
+  //case class for storing
+  case class Visitor(continent : String)
+
+
 
   /**
-    *
-    * @return
+    * reads json file
+    * @return array of raw json strings
     */
   def readFile(filePath:String): Array[String] ={
 
@@ -32,19 +35,45 @@ object Visitors extends LazyLogging{
 
     visitors
 
+  }
+
+
+  /**
+    * parses json and creates data structure for storing parsed data
+    * @param content json string
+    * @return list of parsed objects
+    */
+  def parse(content :Array[String]) : Array[Visitor] = {
+
+    var res =  Array[Visitor]()
+
+    var e= for(v <- content) yield {
+
+      val jsonValue = Json.parse(v)
+      (jsonValue \ "continent").as[String]
+
+    }
+
+    //do here
+
+
+    res
+
 
   }
 
-  implicit val documentReader: Reads[Document] = (
-    (__ \ "id").read[Int] and
-      (__ \ "name").read[String] and
-      (__ \ "file_type").read[String]
-    ) (Document.apply _)
+  implicit val documentReader: Reads[Visitor] = (
+    (__ \ "content").read[String]
+    ) (Visitor.apply _)
 
 
   def main(args: Array[String]) {
 
-    readFile("two-days-ago.log")
+    var content = readFile("two-days-ago.log")
+
+
+    parse(content)
+
   }
 
 
