@@ -7,7 +7,6 @@ import java.util.Date
 case class Visitor(continent: String, date: String, country: String,city : String, pid: String)
 
 
-
 implicit val documentReader: Reads[Visitor] = (
   (__ \ "continent").read[String] and
     (__ \ "country").read[String] and
