@@ -80,6 +80,15 @@ Downloading templates to some folder e.g. *recommenderWoopra* can be achieved wi
 pio template get PredictionIO/template-scala-parallel-recommendation recommenderWoopra
 ```
 
+Edit file **engine.json** and set up the value for appName field.
+
+Initialize and get the key for the app:
+
+```
+pio app new woopraRecommender
+```
+
+
 Go  into recommenderWoopra folder  and run:
 
 ```
