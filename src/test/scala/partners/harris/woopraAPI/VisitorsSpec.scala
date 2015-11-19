@@ -45,7 +45,7 @@ class VisitorsSpec extends FunSuite{
 
     val actions = entries(0).actions
 
-    assert(actions.length ==2 )
+    assert(actions.length == 3)
 
 
 

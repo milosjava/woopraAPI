@@ -36,4 +36,55 @@ Woopra Developers API docs are organized in several sections:
 
 Keys can be generated on this [page](https://www.woopra.com/members/settings/access-keys).
 
-## PredcitionIO
+
+## Remote ec2
+
+I am using nex command for accessing remote server:
+
+```
+ssh -i ~/.ssh/prediction_eren ubuntu@ec2-52-64-15-25.ap-southeast-2.compute.amazonaws.com
+```
+
+## PredictionIO
+
+### Installation
+
+Detailed installation guide is given [here](https://docs.prediction.io/install/).  
+
+I suggest the automatic installation which can be started by typing:
+
+```
+bash -c "$(curl -s https://install.prediction.io/install.sh)"
+```
+
+Follow the installation guide.  After installation is completed make sure to start the service:
+
+```
+pio-start-all
+```
+
+Check status  by typing:
+
+```
+pio status --verbose
+```
+
+### Templates
+
+Templates gallery is located [here](https://templates.prediction.io/).
+
+
+Downloading templates to some folder e.g. *recommenderWoopra* can be achieved with next command:
+
+```
+pio template get PredictionIO/template-scala-parallel-recommendation recommenderWoopra
+```
+
+Go  into recommenderWoopra folder  and run:
+
+```
+pio build
+```
+
+
+
