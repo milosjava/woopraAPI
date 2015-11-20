@@ -95,5 +95,18 @@ Go  into recommenderWoopra folder  and run:
 pio build
 ```
 
+First install predictionIO python SDK:
+
+```
+pip install predictionio
+```
+
+
+Import train data:
+
+```
+python data/import_eventserver.py --access_key ObMGjcvvBt6Skn1lBgvvDXpR7DUbO02tN9IjyPya0R3s6sgBmqG2ZQ5gjIBbUNST
+```
+
 
 
