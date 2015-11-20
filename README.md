@@ -98,7 +98,7 @@ pio build
 First install predictionIO python SDK:
 
 ```
-pip install predictionio
+sudo easy_install predictionio
 ```
 
 
