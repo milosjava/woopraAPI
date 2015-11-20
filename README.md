@@ -89,7 +89,7 @@ pio app new woopraRecommender
 ```
 
 
-Go  into recommenderWoopra folder  and run:
+Go  into recommenderWoopra folder  and run
 
 ```
 pio build
