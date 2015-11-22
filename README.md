@@ -95,7 +95,8 @@ Go  into recommenderWoopra folder  and run
 pio build
 ```
 
-First install predictionIO python SDK:
+First install predictionIO python SDK. Be careful to include **sudo** cause missing it will pop some strange error 
+messages.
 
 ```
 sudo easy_install predictionio
