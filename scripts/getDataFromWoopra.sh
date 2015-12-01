@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 
 #create sequence from 2014-06-16 to 2015-11-18
@@ -6,7 +7,7 @@
 
 
 
-for date in `seq 1 520 | xargs -I {} date -d "2014-06-16 {} days" +%Y-%m-%d`
+for date in `seq 1 13 | xargs -I {} date -d "2015-11-18 {} days" +%Y-%m-%d`
 do
 temp="https://www.woopra.com/rest/2.4/logs/export?website=harris.partners&file=$date&pos=0"
 echo $temp
