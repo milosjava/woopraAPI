@@ -69,7 +69,7 @@ Check status  by typing:
 pio status --verbose
 ```
 
-### Templates
+### Templates - Create recommender from scratch 
 
 Templates gallery is located [here](https://templates.prediction.io/).
 
@@ -103,19 +103,33 @@ sudo easy_install predictionio
 ```
 
 
-Import train data:
+Import sample train data set:
 
 ```
-python data/import_eventserver.py --access_key ObMGjcvvBt6Skn1lBgvvDXpR7DUbO02tN9IjyPya0R3s6sgBmqG2ZQ5gjIBbUNST
+python data/import_eventserver.py --access_key <access key>
 ```
 
+### Recommender Implementation
 
-# Debug Template
+Code for complete recommender is located in bitbucket repository. It can be cloned by typing:
+
+```
+git clone git@bitbucket.org:harrispartners/articlerecommendation.git <project folder>
+```
+
+Source is located in 
+
+# Debugging Recommender
+
+This is info for scala developers that want to run/debug predictionIO recommender in the IntelliJ IDEA.
 
 Follow https://docs.prediction.io/resources/intellij/ with two notes:
 
 1. For **pio train** run configuration , for environment use those from PredcitionIO/conf/pio-env.sh
 2. For module pio-runtime-jars remove scala from dependencies
+
+
+
 
 # Delete all application data on event server
 
