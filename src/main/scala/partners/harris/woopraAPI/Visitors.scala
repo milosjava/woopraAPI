@@ -5,7 +5,7 @@ import scala.io.Source
 import play.api.libs.json._
 import play.api.libs.functional.syntax._
 
-import com.typesafe.scalalogging._
+//import com.typesafe.scalalogging._
 
 //for writing csv file
 import java.io.FileWriter
@@ -16,7 +16,7 @@ import java.io.IOException
 /**
   * Created by Milos Grubjesic (milosjava@gmail.com) on 11/16/15.
   */
-object Visitors extends LazyLogging{
+object Visitors /*extends LazyLogging*/{
 
 
 
@@ -31,7 +31,7 @@ object Visitors extends LazyLogging{
 
     var visitors = Array()++lines
 
-    logger.debug("processing file: "+filePath+" ,entries = " + visitors.length)
+    //logger.debug("processing file: "+filePath+" ,entries = " + visitors.length)
 
     visitors
 
@@ -112,7 +112,7 @@ object Visitors extends LazyLogging{
     fileWriter.flush
     fileWriter.close
 
-    logger.debug("done")
+    //logger.debug("done")
 
   }
 

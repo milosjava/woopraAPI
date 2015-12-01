@@ -92,7 +92,7 @@ pio app new woopraRecommender
 Go  into recommenderWoopra folder  and run
 
 ```
-pio build
+pio build --verbose
 ```
 
 First install predictionIO python SDK. Be careful to include **sudo** cause missing it will pop some strange error 
@@ -110,4 +110,72 @@ python data/import_eventserver.py --access_key ObMGjcvvBt6Skn1lBgvvDXpR7DUbO02tN
 ```
 
 
+# Debug Template
 
+Follow https://docs.prediction.io/resources/intellij/ with two notes:
+
+1. For **pio train** run configuration , for environment use those from PredcitionIO/conf/pio-env.sh
+2. For module pio-runtime-jars remove scala from dependencies
+
+# Delete all application data on event server
+
+```
+pio app data-delete woopraRecommender
+```
+
+## Dump event table sample
+
+```
+/home/sensei/PredictionIO/vendors/hbase-1.0.0/bin/hbase org.apache.hadoop.hbase.mapreduce.Export "pio_event:events_1" data_dump
+```
+
+## Restore event table sample
+
+```
+/opt/PredictionIO/vendors/hbase-1.0.0/bin/hbase org.apache.hadoop.hbase.mapreduce.Import  "pio_event:events_1" data_dump
+```
+
+## Check event server is populated
+
+```
+curl -i -X GET "http://localhost:7070/events.json?accessKey=1lKeD1zfnKJ2sbkSvG4RgWiFkzEmTuYpoh7hXyDIkGrOOOaLHPfwLiTX8tIvoGcS"
+```
+
+## Troubleshooting
+
+* Check who is occupying port 8000
+
+```
+fuser 8000/tcp
+```
+
+
+## Operations with PredictionIO server
+
+
+
+* Deploy
+
+```
+pio deploy
+```
+
+* Undeploy
+
+```
+curl <host>:<port>/stop   (e.g.  curl localhost:8000/stop)
+```
+
+* Reload
+
+```
+curl <host>:<port>/stop   (e.g.  curl localhost:8000/reload)
+```
+
+* Get recommendations
+
+Here's example
+
+```
+curl -H "Content-Type: application/json" -d '{ "user": "eren testing", "num": 4 }' localhost:8000/queries.json
+```
