@@ -1,17 +1,14 @@
-package partners.harris.woopraAPI
+package analytics.api.woopraAPI
+
+import play.api.libs.functional.syntax._
+import play.api.libs.json._
 
 import scala.io.Source
-
-import play.api.libs.json._
-import play.api.libs.functional.syntax._
 
 //import com.typesafe.scalalogging._
 
 //for writing csv file
 import java.io.FileWriter
-import java.io.BufferedWriter
-import java.io.FileWriter
-import java.io.IOException
 
 /**
   * Created by Milos Grubjesic (milosjava@gmail.com) on 11/16/15.

@@ -1,4 +1,4 @@
-package partners.harris.dataBridge
+package analytics.api.dataBridge
 
 /**
   * Created by sensei on 25.11.15..

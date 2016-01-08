@@ -1,4 +1,4 @@
-package partners.harris.woopraAPI
+package analytics.api.woopraAPI
 
 import org.scalatest.FunSuite
 
