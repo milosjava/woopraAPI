@@ -1,16 +1,12 @@
-package org.apache.spark.mllib.recommendation
+package analytics.api.predictionIO.recommender
+
 // This must be the same package as Spark's MatrixFactorizationModel because
 // MatrixFactorizationModel's constructor is private and we are using
 // its constructor in order to save and load the model
 
-import partners.harris.predictionIO.recommender.ALSAlgorithmParams
-
-import io.prediction.controller.IPersistentModel
-import io.prediction.controller.IPersistentModelLoader
+import io.prediction.controller.{IPersistentModel, IPersistentModelLoader}
 import io.prediction.data.storage.BiMap
-
 import org.apache.spark.SparkContext
-import org.apache.spark.SparkContext._
 import org.apache.spark.rdd.RDD
 
 class ALSModel(

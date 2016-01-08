@@ -1,4 +1,4 @@
-package partners.harris.predictionIO.recommender
+package analytics.api.predictionIO.recommender
 
 import io.prediction.controller.LServing
 

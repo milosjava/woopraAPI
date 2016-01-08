@@ -1,4 +1,4 @@
-package partners.harris.predictionIO.recommender
+package analytics.api.predictionIO.recommender
 
 import grizzled.slf4j.Logger
 import io.prediction.controller.{PAlgorithm, Params}
