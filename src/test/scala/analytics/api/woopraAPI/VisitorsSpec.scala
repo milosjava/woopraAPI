@@ -33,7 +33,7 @@ class VisitorsSpec extends FunSuite{
     //check if it returns one
     assert(entries.length == 1)
 
-    //check name is Milos
+    //check if name is Milos
     assert(entries(0).name == "Milos")
 
     //TODO pid wil be probably removed
